@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <!-- Start Footer -->
+    <footer class="cs-footer">
+      <div class="cs-fooer_main">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-sm-6">
+              <div class="cs-footer_item">
+                <div class="cs-text_widget">
+                  <h4>
+                    Vpr<span class="yellow_gradient">o</span>m<span
+                      class="yellow_gradient"
+                      >o</span
+                    >te
+                  </h4>
+                  <p>
+                    At VPromote, we turn ideas into bold, buzz-worthy content
+                    that gets results. Got something in mind? Let’s chat and
+                    create something amazing together.
+                  </p>
+                </div>
+                <div class="cs-social_btns cs-style1">
+                  <a
+                    href="https://www.facebook.com/vpromote11"
+                    target="_blank"
+                    class="cs-center"
+                  >
+                    <img
+                      src="assets/img/social_media/facebook.svg"
+                      width="15"
+                    />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/105117315/admin/dashboard/"
+                    target="_blank"
+                    class="cs-center"
+                  >
+                    <img
+                      src="assets/img/social_media/linkedin.svg"
+                      width="15"
+                    />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/vpromote_/"
+                    target="_blank"
+                    class="cs-center"
+                  >
+                    <img
+                      src="assets/img/social_media/instagram.svg"
+                      width="25"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="cs-footer_item">
+                <h2 class="cs-widget_title">Services</h2>
+                <ul class="cs-menu_widget cs-mp0">
+                  <li>
+                    <a href="GraphicDesigning.html">Graphic Designing</a>
+                  </li>
+                  <li>
+                    <a href="SearchEngineOptimization.html"
+                      >Search Engine Optimization</a
+                    >
+                  </li>
+                  <li>
+                    <a href="WebsiteDesigning.html">Website Designing</a>
+                  </li>
+                  <li>
+                    <a href="ContentWriting.html">Content Writing</a>
+                  </li>
+                  <li>
+                    <a href="WhatsAppMarketing.html">WhatsApp Marketing</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="cs-footer_item">
+                <h2 class="cs-widget_title">Contact Us</h2>
+                <ul class="cs-menu_widget cs-mp0">
+                  <li>Let’s Build Your Brand!</li>
+                  <li>+91 9988981186</li>
+                  <li>marketing@vpromote.org</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="cs-footer_item">
+                <h2 class="cs-widget_title">Subscribe</h2>
+                <!-- Newsletter Form -->
+                <div class="cs-newsletter cs-style1">
+                  <form id="newsletterForm" class="cs-newsletter_form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="9431c49c-af3f-462d-acd9-18a1172105ba" />
+
+                    <input
+                      type="email"
+                      name="email"
+                      class="cs-newsletter_input"
+                      placeholder="Enter Your Email"
+                      required
+                    />
+                    <button type="submit" class="cs-newsletter_btn">
+                      <span>Send</span>
+                    </button>
+                  </form>
+                  <div class="cs-newsletter_text">
+                    Subscribe for bold ideas, fresh updates, and zero boring
+                    stuff straight from VPromote.
+                  </div>
+                  <p id="formMessage" style="margin-top: 10px"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="cs-bottom_footer">
+          <div class="cs-bottom_footer_left">
+            <div class="cs-copyright">
+              Copyright © 2025 |
+              <a href="index.html"
+                ><span class="footer_text"
+                  >Vpr<span class="footer_gradient">o</span>m<span
+                    class="footer_gradient"
+                    >o</span
+                  >te</span
+                >.</a
+              >
+            </div>
+          </div>
+          <div class="cs-bottom_footer_right">
+            <ul class="cs-footer_links cs-mp0">
+              <li>
+                <a href="terms-of-use.html">Terms of Use</a>
+              </li>
+              <li>
+                <a href="privacy-policy.html">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+
+    <script>
+  const form = document.getElementById("newsletterForm");
+  const message = document.getElementById("formMessage");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    message.innerHTML = "Sending...";
+
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData
+    });
+
+    if (response.ok) {
+      message.innerHTML = "✅ Thank you for subscribing!";
+      form.reset();
+    } else {
+      message.innerHTML = "❌ Oops! Something went wrong. Please try again.";
+    }
+  });
+</script>
+  </body>
+</html>
