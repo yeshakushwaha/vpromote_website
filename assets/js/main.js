@@ -228,41 +228,39 @@
   /*--------------------------------------------------------------
     FunFact Section
     --------------------------------------------------------------*/
-const words = ["Therapists", "Creators", "Strategists"];
-let i = 0;
-let j = 0;
-let isDeleting = false;
-const typewriter = document.querySelector(".typewriter");
+  const words = ["Therapists", "Creators", "Strategists"];
+  let i = 0;
+  let j = 0;
+  let isDeleting = false;
+  const typewriter = document.querySelector(".typewriter");
 
-function typeEffect() {
-  const currentWord = words[i];
+  function typeEffect() {
+    const currentWord = words[i];
 
-  if (isDeleting) {
-    typewriter.textContent = currentWord.substring(0, j--);
-  } else {
-    typewriter.textContent = currentWord.substring(0, j++);
+    if (isDeleting) {
+      typewriter.textContent = currentWord.substring(0, j--);
+    } else {
+      typewriter.textContent = currentWord.substring(0, j++);
+    }
+
+    // Fix: wait at FULL word (including last character)
+    if (!isDeleting && j === currentWord.length + 1) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1500); // pause before deleting
+      return;
+    }
+
+    // When completely deleted, move to next word
+    if (isDeleting && j < 0) {
+      isDeleting = false;
+      i = (i + 1) % words.length;
+      j = 0;
+    }
+
+    setTimeout(typeEffect, isDeleting ? 70 : 120);
   }
 
-  // Fix: wait at FULL word (including last character)
-  if (!isDeleting && j === currentWord.length + 1) {
-    isDeleting = true;
-    setTimeout(typeEffect, 1500); // pause before deleting
-    return;
-  }
-
-  // When completely deleted, move to next word
-  if (isDeleting && j < 0) {
-    isDeleting = false;
-    i = (i + 1) % words.length;
-    j = 0;
-  }
-
-  setTimeout(typeEffect, isDeleting ? 70 : 120);
-}
-
-typeEffect();
-
-
+  typeEffect();
 
   /*--------------------------------------------------------------
       5. Slick Slider
@@ -423,40 +421,32 @@ typeEffect();
   /*--------------------------------------------------------------
       8. Modal Video
     --------------------------------------------------------------*/
-  function modalVideo() {
-    $(document).on("click", ".cs-video_open", function (e) {
-      e.preventDefault();
-      var video = $(this).attr("href");
-      video = video.split("?v=")[1].trim();
-      $(".cs-video_popup_container iframe").attr(
-        "src",
-        `https://www.youtube.com/embed/${video}`
-      );
-      $(".cs-video_popup").addClass("active");
-    });
-    $(".cs-video_popup_close, .cs-video_popup_layer").on("click", function (e) {
-      $(".cs-video_popup").removeClass("active");
-      $("html").removeClass("overflow-hidden");
-      $(".cs-video_popup_container iframe").attr("src", "about:blank");
-      e.preventDefault();
-    });
-  }
+  const videoBtn = document.querySelector(".cs-video_open");
+  const modal = document.getElementById("videoModal");
+  const closeBtn = document.querySelector(".video-close");
+  const customVideo = document.getElementById("customVideo");
 
-  /*--------------------------------------------------------------
-      9. Tabs
-    --------------------------------------------------------------*/
-  function tabs() {
-    $(".cs-tabs .cs-tab_links a").on("click", function (e) {
-      var currentAttrValue = $(this).attr("href");
-      $(".cs-tabs " + currentAttrValue)
-        .fadeIn(400)
-        .siblings()
-        .hide();
-      $(this).parents("li").addClass("active").siblings().removeClass("active");
-      e.preventDefault();
-    });
-  }
+  // Open video modal
+  videoBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+    customVideo.play();
+  });
 
+  // Close with cross button
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    customVideo.pause();
+    customVideo.currentTime = 0; // reset video
+  });
+
+  // Close if clicked outside the video
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      customVideo.pause();
+      customVideo.currentTime = 0;
+    }
+  });
   /*--------------------------------------------------------------
       10. Accordian
     --------------------------------------------------------------*/
@@ -640,15 +630,10 @@ typeEffect();
   function scrollUp() {
     $(".cs-scrollup").on("click", function (e) {
       e.preventDefault();
-      $("html,body").animate(
-        {
-          scrollTop: 0,
-        },
-        0
-      );
+      $("html, body").animate({ scrollTop: 0 }, 400); // 400ms for smooth scroll
     });
   }
-  // For Scroll Up
+
   function showScrollUp() {
     let scroll = $(window).scrollTop();
     if (scroll >= 350) {
@@ -657,6 +642,11 @@ typeEffect();
       $(".cs-scrollup").removeClass("cs-scrollup_show");
     }
   }
+
+  $(document).ready(function () {
+    scrollUp();
+    $(window).on("scroll", showScrollUp);
+  });
 
   /*--------------------------------------------------------------
       18. Portfolio Section
@@ -919,6 +909,3 @@ typeEffect();
   }
   document.addEventListener("mousemove", cursorMovingAnimation);
 })(jQuery); // End of use strict
-
-
-

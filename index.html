@@ -42,10 +42,10 @@
     </div>
 
     <div id="head_content"></div>
-    
+
     <!-- Start Hero -->
     <section id="hero" class="hero section">
-      <img src="assets/img/hero-bg-2.gif" alt="" class="hero-bg" />
+      <img src="assets/img/hero-bg.png" alt="" class="hero-bg" />
 
       <div class="container">
         <div class="row">
@@ -61,7 +61,7 @@
               for a re-brand glow-up, we’ve got the creative sauce to spice up
               your digital presence.
             </p>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center mt-4">
               <a href="contact.html" class="btn-get-started">Get Started</a>
             </div>
           </div>
@@ -115,7 +115,7 @@
           </div>
         </div>
       </div>
-      <div class="cs-height_80 cs-height_lg_80"></div>
+      <div class="cs-height_80"></div>
       <div class="cs-section_heading cs-style1">
         <img src="assets/img/creators.gif" alt="Creators" />
       </div>
@@ -151,9 +151,10 @@
               <div class="service-card">
                 <div class="image-wrapper">
                   <img
-                    src="https://images.unsplash.com/photo-1590097521824-d20a96b7504e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="assets/img/service_icons/service_1.jpg"
                     alt="Salesforce"
                   />
+                  <div class="cs-card_overlay"></div>
                   <div class="overlay">
                     <a href="PowerPresentationDesign.html">
                       <i class="fas fa-link"></i>
@@ -180,7 +181,7 @@
               <div class="service-card">
                 <div class="image-wrapper">
                   <img
-                    src="https://images.unsplash.com/photo-1659560893493-9b565e1a26a5?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="assets/img/service_icons/service_2.jpg"
                     alt="Cambridge"
                   />
                   <div class="overlay">
@@ -209,7 +210,7 @@
               <div class="service-card">
                 <div class="image-wrapper">
                   <img
-                    src="https://images.unsplash.com/photo-1506097425191-7ad538b29cef?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="assets/img/service_icons/service_3.jpg"
                     alt="Growth Matters"
                   />
                   <div class="overlay">
@@ -237,7 +238,7 @@
               <div class="service-card">
                 <div class="image-wrapper">
                   <img
-                    src="https://images.unsplash.com/photo-1754039984995-a91721ce1870?q=80&w=961&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="assets/img/service_icons/service_4.jpg"
                     alt="Growth Matters"
                   />
                   <div class="overlay">
@@ -266,7 +267,7 @@
               <div class="service-card">
                 <div class="image-wrapper">
                   <img
-                    src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="assets/img/service_icons/service_5.jpg"
                     alt="Growth Matters"
                   />
                   <div class="overlay">
@@ -324,7 +325,7 @@
               <div class="service-card">
                 <div class="image-wrapper">
                   <img
-                    src="https://images.unsplash.com/photo-1649734926695-1b1664e98842?q=80&w=1462&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="assets/img/service_icons/service_7.jpg"
                     alt="Growth Matters"
                   />
                   <div class="overlay">
@@ -382,7 +383,7 @@
               <div class="service-card">
                 <div class="image-wrapper">
                   <img
-                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="assets/img/service_icons/service_9.jpg"
                     alt="Growth Matters"
                   />
                   <div class="overlay">
@@ -618,14 +619,27 @@
     <section id="video-home">
       <div class="container">
         <a
-          href="#"
+          href="javascript:void(0);"
           class="cs-video_block cs-style1 cs-video_open cs-bg"
-          data-src="assets/img/video_bg.jpeg"
+          style="background-image: url('assets/img/video_bg.jpg')"
         >
           <span class="cs-player_btn cs-accent_color">
             <span></span>
           </span>
         </a>
+      </div>
+
+      <!-- Modal -->
+      <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+          <!-- Close button -->
+          <span class="video-close">&times;</span>
+          <!-- Local Video -->
+          <video id="customVideo" width="100%" controls>
+            <source src="assets/img/vpromote-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
       <div class="cs-height_100 cs-height_lg_80"></div>
     </section>
@@ -784,10 +798,7 @@
                 <div class="slider-nav_item">
                   <div class="cs-rotate_img">
                     <div class="cs-rotate_img_in">
-                      <img
-                        src="assets/img/testimonial_2.jpg"
-                        alt="Nav Image"
-                      />
+                      <img src="assets/img/testimonial_2.jpg" alt="Nav Image" />
                     </div>
                   </div>
                 </div>
@@ -808,10 +819,7 @@
                 <div class="slider-nav_item">
                   <div class="cs-rotate_img">
                     <div class="cs-rotate_img_in">
-                      <img
-                        src="assets/img/testimonial_4.jpg"
-                        alt="Nav Image"
-                      />
+                      <img src="assets/img/testimonial_4.jpg" alt="Nav Image" />
                     </div>
                   </div>
                 </div>
@@ -820,10 +828,7 @@
                 <div class="slider-nav_item">
                   <div class="cs-rotate_img">
                     <div class="cs-rotate_img_in">
-                      <img
-                        src="assets/img/testimonial_5.jpg"
-                        alt="Nav Image"
-                      />
+                      <img src="assets/img/testimonial_5.jpg" alt="Nav Image" />
                     </div>
                   </div>
                 </div>
@@ -832,10 +837,7 @@
                 <div class="slider-nav_item">
                   <div class="cs-rotate_img">
                     <div class="cs-rotate_img_in">
-                      <img
-                        src="assets/img/testimonial_6.jpg"
-                        alt="Nav Image"
-                      />
+                      <img src="assets/img/testimonial_6.jpg" alt="Nav Image" />
                     </div>
                   </div>
                 </div>
@@ -861,7 +863,9 @@
                     </svg>
                   </div>
                   <div class="cs-testimonial_text">
-                    The team at Vpromote really listens. They don’t just push templates, they came up with campaigns that felt tailored for our brand.
+                    The team at Vpromote really listens. They don’t just push
+                    templates, they came up with campaigns that felt tailored
+                    for our brand.
                   </div>
                   <div class="cs-rating" data-rating="4">
                     <div
@@ -896,7 +900,10 @@
                     </svg>
                   </div>
                   <div class="cs-testimonial_text">
-                    I run a small business and was worried digital marketing would be too expensive or complex. Vpromote made it simple, affordable, and effective—I actually saw results in just a few weeks.
+                    I run a small business and was worried digital marketing
+                    would be too expensive or complex. Vpromote made it simple,
+                    affordable, and effective—I actually saw results in just a
+                    few weeks.
                   </div>
                   <div class="cs-rating" data-rating="4">
                     <div
@@ -931,7 +938,9 @@
                     </svg>
                   </div>
                   <div class="cs-testimonial_text">
-                    Whenever I’ve had last-minute requirements, Vpromote has stepped up. Their flexibility and quick turnaround is something I rely on a lot.
+                    Whenever I’ve had last-minute requirements, Vpromote has
+                    stepped up. Their flexibility and quick turnaround is
+                    something I rely on a lot.
                   </div>
                   <div class="cs-rating" data-rating="4">
                     <div
@@ -966,7 +975,9 @@
                     </svg>
                   </div>
                   <div class="cs-testimonial_text">
-                    Vpromote has been one of the easiest vendors to work with. They’re quick, professional, and always deliver on time. It saves me so much hassle knowing I can count on them.
+                    Vpromote has been one of the easiest vendors to work with.
+                    They’re quick, professional, and always deliver on time. It
+                    saves me so much hassle knowing I can count on them.
                   </div>
                   <div class="cs-rating" data-rating="4">
                     <div
@@ -1001,7 +1012,10 @@
                     </svg>
                   </div>
                   <div class="cs-testimonial_text">
-                    We needed design renders for our projects and the team understood exactly what we were looking for. The designs were creative and practical, which made our work so much easier.
+                    We needed design renders for our projects and the team
+                    understood exactly what we were looking for. The designs
+                    were creative and practical, which made our work so much
+                    easier.
                   </div>
                   <div class="cs-rating" data-rating="4">
                     <div
@@ -1036,7 +1050,9 @@
                     </svg>
                   </div>
                   <div class="cs-testimonial_text">
-                    I had no idea what SEO really meant before working with Vpromote. They explained everything in simple terms and guided me step by step. Now our content actually ranks!
+                    I had no idea what SEO really meant before working with
+                    Vpromote. They explained everything in simple terms and
+                    guided me step by step. Now our content actually ranks!
                   </div>
                   <div class="cs-rating" data-rating="4">
                     <div
@@ -1081,7 +1097,7 @@
       </div>
     </div>
     <!-- Start Moving Text -->
-    <div class="cs-height_100 cs-height_lg_70"></div>
+    <div class="cs-height_50 cs-height_lg_70"></div>
 
     <!-- Start CTA -->
     <section>
@@ -1160,7 +1176,7 @@
     </div>
     <!-- End Video Popup -->
     <!-- Script -->
-    <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/js/plugins/isotope.pkg.min.js"></script>
     <script src="assets/js/plugins/jquery.slick.min.js"></script>
     <script src="assets/js/plugins/jquery.counter.min.js"></script>
